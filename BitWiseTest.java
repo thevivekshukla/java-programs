@@ -24,7 +24,7 @@ public class BitWiseTest
 		c = a >> 2;			//15 = 1111
 		System.out.println("a >> 2 = "+ c);
 
-		c = a >>> 2;		//15 = 0000 1111
+		c = a >>> 2;		//15 = 1111
 		System.out.println("a >>> 2 = "+ c);
 
 	}
