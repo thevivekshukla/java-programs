@@ -11,14 +11,24 @@ class ArrayClass
 
 	public void insert(int value)
 	{
-		a[nElems] = value;
-		nElems++;
+		if (nElems != a.length)
+		{
+			a[nElems] = value;
+			nElems++;
+		}
+		else
+		{
+			System.out.println("Array is full can't insert another element.");
+		}
 	}
 
 	public void insertRandom()
 	{
+		nElems = 0;
 		for (int i=0; i<a.length; i++)
-			a[i] = (int) (Math.random() * 1000);
+		{
+			insert((int)(Math.random()*100));
+		}
 	}
 
 	public void display()
@@ -82,6 +92,8 @@ public class SortApp
 
 		arr.bSort();
 		arr.display();
+
+		System.out.println();
 
 		arr.insertRandom();
 		arr.display();
