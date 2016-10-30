@@ -43,16 +43,16 @@ class NotepadGUI
 		panel.add(scroller);
 
 		JMenuBar menuBar = new JMenuBar();
-		JMenuItem newMenu = new JMenuItem("New");
-		newMenu.addActionListener(new NewMenu());
-		JMenuItem openMenu = new JMenuItem("Open");
-		openMenu.addActionListener(new OpenMenu());
-		JMenuItem saveMenu = new JMenuItem("Save");
-		saveMenu.addActionListener(new SaveMenu());
+		JMenuItem newMenuItem = new JMenuItem("New");
+		newMenuItem.addActionListener(new NewMenuItem());
+		JMenuItem openMenuItem = new JMenuItem("Open");
+		openMenuItem.addActionListener(new OpenMenuItem());
+		JMenuItem saveMenuItem = new JMenuItem("Save");
+		saveMenuItem.addActionListener(new SaveMenuItem());
 
-		menuBar.add(newMenu);
-		menuBar.add(openMenu);
-		menuBar.add(saveMenu);
+		menuBar.add(newMenuItem);
+		menuBar.add(openMenuItem);
+		menuBar.add(saveMenuItem);
 
 		frame.setJMenuBar(menuBar);
 		frame.getContentPane().add(BorderLayout.CENTER, textArea);
@@ -63,7 +63,7 @@ class NotepadGUI
 	}
 
 
-	public class NewMenu implements ActionListener
+	public class NewMenuItem implements ActionListener
 	{
 		public void actionPerformed(ActionEvent ev)
 		{
@@ -72,7 +72,7 @@ class NotepadGUI
 	}
 
 
-	public class OpenMenu implements ActionListener
+	public class OpenMenuItem implements ActionListener
 	{
 		public void actionPerformed(ActionEvent ev)
 		{
@@ -101,7 +101,7 @@ class NotepadGUI
 	}
 
 
-	public class SaveMenu implements ActionListener
+	public class SaveMenuItem implements ActionListener
 	{
 		public void actionPerformed(ActionEvent ev)
 		{
