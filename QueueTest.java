@@ -17,19 +17,34 @@ class QueueClass
 
 	public void insert(int value)
 	{
-		if (rear == maxSize-1)
-			rear = -1;
-		queueArray[++rear] = value;
-		nItems++;
+		if (!isFull())
+		{
+			if (rear == maxSize-1)
+				rear = -1;
+			queueArray[++rear] = value;
+			nItems++;
+			System.out.println("Inserted "+ value +" in queue.");
+		}
+		else
+			System.out.println("Queue is full. Cannot insert "+ value +".");
 	}
 
 	public int remove()
 	{
-		int temp = queueArray[front++];
-		if (front == maxSize)
-			front = 0;
-		nItems--;
-		return temp;
+		if (!isEmpty())
+		{
+			int temp = queueArray[front++];
+			if (front == maxSize)
+				front = 0;
+			nItems--;
+			System.out.println("Removed: "+ temp);
+			return temp;
+		}
+		else
+		{
+			System.out.println("Queue is already empty. Cannot remove any element.");
+			return -1;
+		}
 	}
 
 	public int peek()
@@ -72,6 +87,7 @@ public class QueueTest
 		System.out.println(q.remove());
 		System.out.println(q.remove());
 
+		q.remove();
 		System.out.println("is empty: "+ q.isEmpty());
 
 		q.insert(43);
@@ -79,6 +95,8 @@ public class QueueTest
 		q.insert(96);
 		q.insert(50);
 		q.insert(18);
+
+		q.remove();
 		q.insert(1);
 
 		System.out.println(q.peek());
